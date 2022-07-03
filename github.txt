@@ -1,0 +1,26 @@
+git config --global user.name Name
+git config --global user.email email
+
+
+touch .gitignore
+
+git init
+git add  . 
+
+git commit -m "Initial commit"
+
+git status
+
+git remote add origin github url
+git push origin master ---> to push the code to github
+
+Need ssh key for windows pc check the command online and copy paste it on gitbash command prompt
+
+give your email address of github account
+
+follow steps
+
+To display your SSH key write this command...
+Firts copy the path of your SSH key and then 
+cat your ssh key path
+copy it
