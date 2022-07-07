@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -25,6 +26,35 @@ class Lockers {
 					if(file.createNewFile())
 					{
 						System.out.println("File Created Successfully....");
+						System.out.println("Do you want to write something to the file?\nPress Yes or No.");
+						String ch = sc.nextLine();
+						if(ch.equals("Yes")||ch.equals("yes"))
+						{
+							String data = sc.nextLine();
+							try
+							{
+								Files.writeString(file.toPath(), data);
+								System.out.println("Data is written to the file successfully!");
+								System.out.println("Do you want to read the file?\nPress Yes or No");
+								String ch1 = sc.nextLine();
+								if(ch1.equals("Yes")||ch1.equals("yes"))
+								{
+									System.out.println(Files.readString(file.toPath()));
+								}
+								else
+								{
+									System.out.println("Thanks for using our application");
+								}
+							}
+							catch(Exception e) {
+								System.out.println("File isn't exist or not Writable");
+							}
+						
+						}
+						else
+						{
+							System.out.println("Thanks for using this application");
+						}
 					}
 				}
 			} catch (IOException e) {
@@ -132,7 +162,7 @@ class Lockers {
 		int choice = 0;
 		
 		do {
-			System.out.println("**** Main Menu ****\nPlease select an option from the following");
+			System.out.println("This is the First Simplilearn Project.....\n***Created by Talib Hassan***\n***Email Id - thussain520@gmail.com***\n**** Main Menu ****\nPlease select an option from the following");
 			System.out.println("1. Display all files in ascending order");
 			System.out.println("2. Go to the User Interface");
 			System.out.println("3. Exit or Quit");
